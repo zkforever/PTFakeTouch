@@ -36,9 +36,15 @@ static NSMutableArray *touchAry;
     }
     pointId = pointId - 1;
     UITouch *touch = [touchAry objectAtIndex:pointId];
+    
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    if ([window isKindOfClass:NSClassFromString(@"UITextEffectsWindow")] && ![window isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")]) {
+        NSLog(@"class==%@",NSStringFromClass(window.class));
+        window = [UIApplication sharedApplication].keyWindow;
+    }
     if (phase == UITouchPhaseBegan) {
         touch = nil;
-        touch = [[UITouch alloc] initAtPoint:point inWindow:[UIApplication sharedApplication].keyWindow];
+        touch = [[UITouch alloc] initAtPoint:point inWindow:window];
         [touchAry replaceObjectAtIndex:pointId withObject:touch];
         [touch setLocationInWindow:point];
     }else{
