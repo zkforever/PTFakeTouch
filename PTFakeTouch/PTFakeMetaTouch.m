@@ -48,6 +48,8 @@ static NSMutableArray *touchAry;
                 DLog(@"click view");
                 window = [UIApplication sharedApplication].keyWindow;
             }
+        }else if ([window isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")] && keyboardView == nil) {
+            window = [UIApplication sharedApplication].keyWindow;
         }
     }
     if (phase == UITouchPhaseBegan) {
