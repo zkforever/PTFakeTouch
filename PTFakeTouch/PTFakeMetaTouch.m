@@ -39,8 +39,16 @@ static NSMutableArray *touchAry;
     
     UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
     if ([window isKindOfClass:NSClassFromString(@"UITextEffectsWindow")] && ![window isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")]) {
-        NSLog(@"class==%@",NSStringFromClass(window.class));
+        DLog(@"class==%@",NSStringFromClass(window.class));
         window = [UIApplication sharedApplication].keyWindow;
+    }else {
+        UIView *keyboardView = [PTFakeMetaTouch findKeyboard];
+        if ([window isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")] && keyboardView) {
+            if (point.y < window.bounds.size.height - keyboardView.bounds.size.height) {
+                DLog(@"click view");
+                window = [UIApplication sharedApplication].keyWindow;
+            }
+        }
     }
     if (phase == UITouchPhaseBegan) {
         touch = nil;
@@ -61,6 +69,44 @@ static NSMutableArray *touchAry;
     }
     return (pointId+1);
 }
+
+
++ (UIView *)findKeyboard
+{
+    UIView *keyboardView = nil;
+    NSArray *windows = [[UIApplication sharedApplication] windows];
+    for (UIWindow *window in [windows reverseObjectEnumerator])//逆序效率更高，因为键盘总在上方
+    {
+        keyboardView = [PTFakeMetaTouch findKeyboardInView:window];
+        if (keyboardView)
+        {
+            return keyboardView;
+        }
+    }
+    return nil;
+}
+
++ (UIView *)findKeyboardInView:(UIView *)view
+{
+    for (UIView *subView in [view subviews])
+    {
+        if (strstr(object_getClassName(subView), "UIKeyboard"))
+        {
+            return subView;
+        }
+        else
+        {
+            UIView *tempView = [PTFakeMetaTouch findKeyboardInView:subView];
+            if (tempView)
+            {
+                return tempView;
+            }
+        }
+    }
+    return nil;
+}
+
+
 
 
 + (UIEvent *)eventWithTouches:(NSArray *)touches

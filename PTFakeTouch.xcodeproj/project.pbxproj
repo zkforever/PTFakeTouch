@@ -9,24 +9,24 @@
 /* Begin PBXBuildFile section */
 		15BBDF041D61AD5B0098330F /* PTFakeTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BBDEF91D61AD5B0098330F /* PTFakeTouch.framework */; };
 		15BBDF091D61AD5B0098330F /* PTFakeTouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BBDF081D61AD5B0098330F /* PTFakeTouchTests.m */; };
-		15BBDF161D61AD920098330F /* PTFakeMetaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF131D61AD920098330F /* PTFakeMetaTouch.h */; };
+		15BBDF161D61AD920098330F /* PTFakeMetaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF131D61AD920098330F /* PTFakeMetaTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15BBDF171D61AD920098330F /* PTFakeMetaTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BBDF141D61AD920098330F /* PTFakeMetaTouch.m */; };
-		15BBDF1A1D61ADE00098330F /* PTFakeTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF191D61ADE00098330F /* PTFakeTouch.h */; };
+		15BBDF1A1D61ADE00098330F /* PTFakeTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF191D61ADE00098330F /* PTFakeTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15BBDF1D1D61AE470098330F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BBDF1C1D61AE470098330F /* IOKit.framework */; };
-		15BBDF291D61AECA0098330F /* UIApplication-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF1F1D61AECA0098330F /* UIApplication-KIFAdditions.h */; };
+		15BBDF291D61AECA0098330F /* UIApplication-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF1F1D61AECA0098330F /* UIApplication-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15BBDF2A1D61AECA0098330F /* UIApplication-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BBDF201D61AECA0098330F /* UIApplication-KIFAdditions.m */; };
-		15BBDF2B1D61AECA0098330F /* UIEvent+KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF211D61AECA0098330F /* UIEvent+KIFAdditions.h */; };
+		15BBDF2B1D61AECA0098330F /* UIEvent+KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF211D61AECA0098330F /* UIEvent+KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15BBDF2C1D61AECA0098330F /* UIEvent+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BBDF221D61AECA0098330F /* UIEvent+KIFAdditions.m */; };
-		15BBDF2D1D61AECA0098330F /* UITouch-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF231D61AECA0098330F /* UITouch-KIFAdditions.h */; };
+		15BBDF2D1D61AECA0098330F /* UITouch-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF231D61AECA0098330F /* UITouch-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15BBDF2E1D61AECA0098330F /* UITouch-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BBDF241D61AECA0098330F /* UITouch-KIFAdditions.m */; };
-		15BBDF2F1D61AECA0098330F /* UIView-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF251D61AECA0098330F /* UIView-KIFAdditions.h */; };
+		15BBDF2F1D61AECA0098330F /* UIView-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF251D61AECA0098330F /* UIView-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15BBDF301D61AECA0098330F /* UIView-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BBDF261D61AECA0098330F /* UIView-KIFAdditions.m */; };
-		15BBDF311D61AECA0098330F /* UIWindow-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF271D61AECA0098330F /* UIWindow-KIFAdditions.h */; };
+		15BBDF311D61AECA0098330F /* UIWindow-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF271D61AECA0098330F /* UIWindow-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15BBDF321D61AECA0098330F /* UIWindow-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BBDF281D61AECA0098330F /* UIWindow-KIFAdditions.m */; };
-		15BBDF351D61AF010098330F /* IOHIDEvent+KIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF331D61AF010098330F /* IOHIDEvent+KIF.h */; };
+		15BBDF351D61AF010098330F /* IOHIDEvent+KIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF331D61AF010098330F /* IOHIDEvent+KIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15BBDF361D61AF010098330F /* IOHIDEvent+KIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BBDF341D61AF010098330F /* IOHIDEvent+KIF.m */; };
-		15BBDF381D61AF540098330F /* FixCategoryBug.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF371D61AF540098330F /* FixCategoryBug.h */; };
-		15BBDF3A1D61AFC50098330F /* LoadableCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF391D61AFC50098330F /* LoadableCategory.h */; };
+		15BBDF381D61AF540098330F /* FixCategoryBug.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF371D61AF540098330F /* FixCategoryBug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15BBDF3A1D61AFC50098330F /* LoadableCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BBDF391D61AFC50098330F /* LoadableCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
