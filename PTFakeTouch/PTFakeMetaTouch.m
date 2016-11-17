@@ -52,6 +52,7 @@ static NSMutableArray *touchAry;
             window = [UIApplication sharedApplication].keyWindow;
         }
     }
+    DLog(@"window class==%@",NSStringFromClass(window.class));
     if (phase == UITouchPhaseBegan) {
         touch = nil;
         touch = [[UITouch alloc] initAtPoint:point inWindow:window];
@@ -64,7 +65,8 @@ static NSMutableArray *touchAry;
     
     
     
-    UIEvent *event = [self eventWithTouches:touchAry];
+//    UIEvent *event = [self eventWithTouches:touchAry];
+    UIEvent *event = [self eventWithTouches:touchAry andPointId:pointId];
     [[UIApplication sharedApplication] sendEvent:event];
     if ((touch.phase==UITouchPhaseBegan)||touch.phase==UITouchPhaseMoved) {
         [touch setPhaseAndUpdateTimestamp:UITouchPhaseStationary];
@@ -108,7 +110,17 @@ static NSMutableArray *touchAry;
     return nil;
 }
 
-
++ (UIEvent *)eventWithTouches:(NSArray *)touches andPointId:(NSInteger)pointId {
+    UIEvent *event = [[UIApplication sharedApplication] _touchesEvent];
+    [event _clearTouches];
+    UITouch *touch = [touches objectAtIndex:pointId];
+    NSArray *usefulTouchs = [NSArray arrayWithObject:touch];
+    [event kif_setEventWithTouches:usefulTouchs];
+    for (UITouch *aTouch in usefulTouchs) {
+        [event _addTouch:aTouch forDelayedDelivery:NO];
+    }
+    return event;
+}
 
 
 + (UIEvent *)eventWithTouches:(NSArray *)touches
@@ -117,7 +129,6 @@ static NSMutableArray *touchAry;
     UIEvent *event = [[UIApplication sharedApplication] _touchesEvent];
     [event _clearTouches];
     [event kif_setEventWithTouches:touches];
-    
     for (UITouch *aTouch in touches) {
         [event _addTouch:aTouch forDelayedDelivery:NO];
     }

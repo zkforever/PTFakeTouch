@@ -44,7 +44,7 @@ typedef struct {
     // Create a fake tap touch
     [self setWindow:window]; // Wipes out some values.  Needs to be first.
     
-    //[self setTapCount:1];
+    [self setTapCount:1];
     [self _setLocationInWindow:point resetPrevious:YES];
     
 	UIView *hitTestView = [window hitTest:point withEvent:nil];
@@ -53,7 +53,7 @@ typedef struct {
     [self setPhase:UITouchPhaseBegan];
     DLog(@"initAtPoint setPhase 0");
     [self _setIsFirstTouchForView:YES];
-    [self setIsTap:NO];
+    [self setIsTap:YES];
     [self setTimestamp:[[NSProcessInfo processInfo] systemUptime]];
     if ([self respondsToSelector:@selector(setGestureView:)]) {
         [self setGestureView:hitTestView];
@@ -74,7 +74,7 @@ typedef struct {
     CGPoint point = CGPointMake(0, 0);
     [self setWindow:window]; // Wipes out some values.  Needs to be first.
     
-    //[self setTapCount:1];
+//    [self setTapCount:1];
     [self _setLocationInWindow:CGPointMake(0, 0) resetPrevious:YES];
     
     UIView *hitTestView = [window hitTest:point withEvent:nil];
